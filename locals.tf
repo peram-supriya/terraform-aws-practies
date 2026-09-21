@@ -9,7 +9,7 @@ locals {
         local.comman_tags,
         
         {
-            Name = "$(var.project)-$(var.environmet)"
+            Name = "${var.project}-${var.environment}"
     },
     var.vpc_tags
     )
