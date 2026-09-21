@@ -35,3 +35,27 @@ variable "public_sub_tags" {
     type = map  
   
 }
+
+variable "private_sub_cidr" {
+    default = ["10.0.1.0/24", "10.0.2.0/24"]
+    type = list
+  
+}
+
+variable "private_sub_tags" {
+    default = {}
+    type = map  
+  
+}
+
+variable "database_sub_cidr" {
+    default = ["10.0.1.0/24", "10.0.2.0/24"]
+    type = list
+  
+}
+
+variable "database_sub_tags" {
+    default = {}
+    type = map  
+  
+}
