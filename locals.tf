@@ -1,6 +1,6 @@
 locals {
-    Project = "roboshop"
-    Environment = "dev"
+    Project = var.project
+    Environment = var.environment
 
     vpc_final_tags = {
         Name = "$(local.Project)-$(local.Environment)"
