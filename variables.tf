@@ -25,3 +25,9 @@ variable "gt_tags" {
     default = {}
     type = map
 }
+
+variable "sub_cidr" {
+    default = ["10.0.1.0/24", "10.0.2.0/24"]
+    type = list(string)
+  
+}
