@@ -17,6 +17,8 @@ locals {
         Name = "${var.project}-${var.environment}"
     }
 
-
+    /* pulic_subnet_tags ={
+        #roboshop-dev-us-east-1a
+    } */
 }
 
