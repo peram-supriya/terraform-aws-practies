@@ -52,7 +52,7 @@ resource "aws_subnet" "private" {
 resource "aws_subnet" "database" {
     count = length(var.public_sub_cidr)
     vpc_id     = aws_vpc.main.id
-    cidr_block = var.database_sub_cidr
+    cidr_block = var.database_sub_cidr[count.index]
     availability_zone = local.az_info[count.index]
     map_public_ip_on_launch = false
 
