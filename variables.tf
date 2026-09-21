@@ -1,11 +1,11 @@
 variable "project" {
-    default = {}
+    
     type = string
   
 }
 
 variable "environment" {
-    default = {}
+    
     type = string
 }
 
