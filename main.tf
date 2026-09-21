@@ -161,8 +161,8 @@ resource "aws_route" "private" {
     nat_gateway_id            = aws_nat_gateway.main.id
 }
 
-resource "aws_route" "private" {
-    route_table_id            = aws_route_table.private
+resource "aws_route" "database" {
+    route_table_id            = aws_route_table.database
     destination_cidr_block    = "0.0.0.0/0"
     nat_gateway_id             = aws_nat_gateway.main.id
 }
