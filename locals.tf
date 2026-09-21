@@ -17,8 +17,6 @@ locals {
         Name = "${var.project}-${var.environment}"
     }
 
-    /* pulic_subnet_tags ={
-        #roboshop-dev-us-east-1a
-    } */
+    az_info = slice(data.aws_availability_zones.available.names, 0, 2)
 }
 

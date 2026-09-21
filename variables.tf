@@ -1,11 +1,9 @@
 variable "project" {
-    
     type = string
   
 }
 
 variable "environment" {
-    
     type = string
 }
 
@@ -26,8 +24,14 @@ variable "gt_tags" {
     type = map
 }
 
-variable "sub_cidr" {
+variable "public_sub_cidr" {
     default = ["10.0.1.0/24", "10.0.2.0/24"]
-    type = list(string)
+    type = list
+  
+}
+
+variable "public_sub_tags" {
+    default = {}
+    type = map  
   
 }
