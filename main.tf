@@ -95,7 +95,7 @@ resource "aws_route_table" "private" {
         {
             Name = "${var.project}-${var.environment}-private"
         },
-        var.public_route_table_tags
+        var.private_route_table_tags
 
     )
 }
@@ -110,7 +110,7 @@ resource "aws_route_table" "database" {
         {
             Name = "${var.project}-${var.environment}-database"
         },
-        var.public_route_table_tags
+        var.database_route_table_tags
 
     )
 }
