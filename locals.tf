@@ -13,4 +13,10 @@ locals {
     },
     var.vpc_tags
     )
+    gt_final_tags = {
+        Name = "${var.project}-${var.environment}"
+    }
+
+
 }
+

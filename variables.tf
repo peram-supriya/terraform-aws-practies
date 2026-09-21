@@ -21,4 +21,7 @@ variable "vpc_tags" {
   
 }
 
-
+variable "gt_tags" {
+    default = {}
+    type = map
+}
