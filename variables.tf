@@ -15,6 +15,7 @@ variable "cidr_block" {
 
 variable "vpc_tags" {
     default = {}
+    type = map
   
 }
 
