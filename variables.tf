@@ -59,3 +59,21 @@ variable "database_sub_tags" {
     type = map  
   
 }
+
+variable "public_route_table_tags" {
+    default = {}
+    type = map
+  
+}
+
+variable "private_route_table_tags" {
+    default = {}
+    type = map
+  
+}
+
+variable "database_route_table_tags" {
+    default = {}
+    type = map
+  
+}

@@ -13,6 +13,7 @@ resource "aws_internet_gateway" "main" {
   tags = local.gt_final_tags
 }
 
+#public subnet
 
 resource "aws_subnet" "public" {
     count = length(var.public_sub_cidr)
@@ -31,6 +32,8 @@ resource "aws_subnet" "public" {
     )
 }
 
+#private subnet
+
 resource "aws_subnet" "private" {
     count = length(var.public_sub_cidr)
     vpc_id     = aws_vpc.main.id
@@ -48,6 +51,7 @@ resource "aws_subnet" "private" {
     )
 }
 
+#database subnet
 
 resource "aws_subnet" "database" {
     count = length(var.public_sub_cidr)
@@ -62,6 +66,51 @@ resource "aws_subnet" "database" {
             Name = "${var.project}-${var.environment}-database-${local.az_info[count.index]}"
         },
         var.public_sub_tags
+
+    )
+}
+
+#public route table
+
+resource "aws_route_table" "public" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+        local.comman_tags,
+        {
+            Name = "${var.project}-${var.environment}-public"
+        },
+        var.public_route_table_tags
+
+    )
+}
+
+#private route table
+
+resource "aws_route_table" "private" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+        local.comman_tags,
+        {
+            Name = "${var.project}-${var.environment}-private"
+        },
+        var.public_route_table_tags
+
+    )
+}
+
+#database route table
+
+resource "aws_route_table" "database" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+        local.comman_tags,
+        {
+            Name = "${var.project}-${var.environment}-database"
+        },
+        var.public_route_table_tags
 
     )
 }
