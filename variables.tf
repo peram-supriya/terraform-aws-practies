@@ -7,6 +7,12 @@ variable "environment" {
     type = string
 }
 
+variable "vpc_cidr" {
+    default = "10.0.0.0/16"
+    type = string
+  
+}
+
 variable "cidr_block" {
     default = "10.0.0.0/16"
     type = string
@@ -90,6 +96,6 @@ variable "nat_tags" {
 
 variable "is_peering_required" {
     default = false
-    type = bool
+    type = bool()
   
 }
